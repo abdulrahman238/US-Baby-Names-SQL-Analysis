@@ -18,7 +18,7 @@ use babies_names;
 show tables;
 ```
 
-*-- View the names table to understand its columns*
+*-- View the names table babies_name table*
 ```
 select * from babies_names;
 select * from regions;
@@ -32,13 +32,16 @@ select max(year) as "Start Year",
 ```
     
 *-- Sum the number of babies for each name across all years*
+```
 select name as "Names",
  sum(Births) as "Number of Babies"
         from babies_names
         group by name
         order by sum(Births) desc;
+```
         
--- : Check most popular names per year
+*-- : Check most popular names per year*
+```
 select
  name as "Names",
 year as Year,
@@ -47,3 +50,4 @@ from babies_names
 group by year,name
 order by  "Total Birth" DESC
 LIMIT 20;
+```
