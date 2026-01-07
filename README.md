@@ -1,25 +1,37 @@
 # US-Baby-Names-SQL-Analysis
 This project analyzes baby names from U.S. Social Security records. The dataset includes baby name, gender, year of birth, state, and number of births. SQL (MySQL) was used to explore name popularity, gender usage, and regional differences
 
-
--- viewing the database
+--- creating a database called babies_names
+```
+create database;
+```
+*-- viewing the database*
+```
 Show databases;
--- showing the database
-
+```
+*-- using  the database called babies_names*
+```
 use babies_names;
+```
+*--- showng the tables in the database*
+```
 show tables;
+```
 
--- View the names table to understand its columns
+*-- View the names table to understand its columns*
+```
 select * from babies_names;
 select * from regions;
+```
 
-
--- Check the range of years in the dataset
+*-- Check the range of years in the dataset*
+```
 select max(year) as "Start Year",
 	min(year) as " End year" 
     from babies_names;
+```
     
--- Sum the number of babies for each name across all years
+*-- Sum the number of babies for each name across all years*
 select name as "Names",
  sum(Births) as "Number of Babies"
         from babies_names
